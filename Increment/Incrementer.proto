@@ -1,0 +1,21 @@
+syntax = "proto3";
+package Increment;
+
+option go_package = "https://github.com/antonPalmFolkmann/DISYS-MockExam;Increment";
+
+service IncrementerService{
+    rpc JoinServer(JoinRequest) returns (JoinResponse){}
+    rpc Increment() returns (IncrementResponse){}
+}
+
+message JoinRequest {
+    int32 id = 1;
+}
+
+message JoinResponse {
+    string joinmessage = 1;
+}
+
+message IncrementResponse {
+    int32 value = 1;
+}
